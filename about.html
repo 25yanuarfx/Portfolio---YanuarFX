@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/all.css" rel="stylesheet" />
+
+    <style>
+      @import url(
+        "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      );
+      @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #f8ffea;
+        color: #1f342c;
+        padding-top: 100px;
+        font-family: "Poppins", sans-serif;
+      }
+      .navbar {
+        background-color: #1f342c;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      .navbar-brand {
+        font-family: "Rock Salt", cursive;
+      }
+      .navbar-brand,
+      .nav-link,
+      .navbar-toggler-icon {
+        color: #f8ffea;
+      }
+      .nav-link:hover {
+        opacity: 0.5;
+        transform: scale(1.05);
+      }
+      .nav-link.active {
+        color: #f8ffea !important;
+      }
+      .btn-success {
+        background-color: #f5f5d1;
+        color: #0e1d16;
+        border: none;
+      }
+      .btn-success:hover {
+        background-color: #ffffcc;
+        color: #0e1d16;
+      }
+      .card {
+        background-color: #182c24;
+        color: #f8ffea;
+        border: none;
+        margin: 50px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        animation: fadeInDown 1s ease forwards;
+        animation-delay: 1.5s;
+        opacity: 0;
+      }
+      .card-header {
+        background-color: #425941;
+        color: #f5f5d1;
+        border-radius: 50px;
+      }
+
+      .floating-asset {
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+      }
+      .fade-in-down {
+        opacity: 0;
+        transform: translateY(-40px);
+        animation: fadeInDown 1s ease-out forwards;
+      }
+
+      @keyframes fadeInDown {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .pad {
+        min-height: calc(100vh - 200px);
+        padding-top: 0px;
+        padding-bottom: 100px;
+      }
+
+      .container > .row {
+        margin-left: 0 !important;
+      }
+      .container > .row > .col-lg-7 img {
+        max-width: 850px;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+      }
+
+      footer {
+        margin-top: 0;
+        padding-top: 70px;
+        padding-bottom: 0px;
+      }
+
+      @media (max-width: 991.98px) {
+
+        .container > .row {
+          margin-left: 0 !important;
+        }
+        .container > .row > div {
+          margin: 0 auto 30px auto;
+          text-align: center;
+        }
+        .container > .row > .col-lg-7,
+        .container > .row > .col-md-7,
+        .container > .row > .col-lg-5,
+        .container > .row > .col-md-5 {
+          max-width: 100%;
+          flex: 0 0 100%;
+        }
+        .container > .row > .col-lg-7 img {
+          max-width: 100%;
+          margin: 0 auto;
+          margin-top: 0 !important;
+        }
+        .container > .row > .col-lg-5 {
+          padding: 0 20px;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+
+        .btn-success {
+          width: 100%;
+          padding: 12px 0;
+          font-size: 1.1rem;
+        }
+        p {
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+    </style>
+    <title>About Yanuar</title>
+  </head>
+
+  <body>
+    <div id="floating-assets-container"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top fade-in-down" style="animation-delay: 0s;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Yanuar FX</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Me</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >My Works</a
+              >
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="portofolio.html">Photography</a></li>
+                <li><a class="dropdown-item" href="portovideo.html">Motion Graphic</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="pad">
+      <div class="container fade-in-up" style="animation-delay: 1.2s;">
+        <div class="row align-items-center gx-0" style="margin-left: 0;">
+          <div class="col-lg-7 col-md-7 col-sm-12 text-center">
+            <img
+              src="img/gw.png"
+              alt="Yanuar"
+              style="max-width: 850px; width: 100%; height: auto; border-radius: 20px; margin-top: 0;"
+            />
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-12">
+            <h1>Hello,<br /> I'm Yanuar !</h1>
+            <p>
+              Saya merupakan seorang freelance yang berkecimpung di dunia Multimedia,
+              spesialis saya ada di bidang motion graphic dan juga fotografi, saat ini saya
+              sedang berkuliah S1 Pendidikan Multimedia di Universitas Pendidikan Indonesia,
+              saya sudah banyak mendapatkan client dari dalam maupun luar negeri, kalian bisa
+              melihat portofolio saya disini, jika ada pertanyaan atau menginginkan kerjasama
+              bisa langsung saja kontak saya, Terima Kasih!
+            </p>
+            <a href="http://wa.me/6281312451465" class="btn btn-success" role="button">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-5">
+      <div class="card text-center">
+        <div class="card-header">Featured</div>
+        <div class="card-body">
+          <h5 class="card-title">More Portofolio</h5>
+          <p class="card-text">powered by foriio.</p>
+          <a href="https://fori.io/yanuarfx" class="btn btn-success">My Works</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const container = document.getElementById("floating-assets-container");
+
+      function randomAssets(count = 6) {
+        for (let i = 0; i < count; i++) {
+          const img = document.createElement("img");
+          img.src = "img/aset.png";
+          img.classList.add("floating-asset");
+
+          const size = Math.floor(Math.random() * 5) + 50;
+          img.style.width = `${size}px`;
+
+          const isLeft = Math.random() > 0.5;
+          img.style.left = isLeft ? `${Math.floor(Math.random() * 100)}px` : "unset";
+          img.style.right = !isLeft ? `${Math.floor(Math.random() * 100)}px` : "unset";
+
+          img.style.top = `${Math.floor(Math.random() * window.innerHeight)}px`;
+
+          container.appendChild(img);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        randomAssets(4);
+      });
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

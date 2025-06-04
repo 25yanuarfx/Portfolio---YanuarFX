@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Foto Yanuar</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/all.css" rel="stylesheet" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #1f342c;
+        color: #f5f5d1;
+        font-family: 'Poppins', sans-serif;
+        padding-top: 100px;
+      }
+
+      .navbar {
+        background-color: #f8ffea;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar-brand {
+        font-family: 'Rock Salt', cursive;
+      }
+
+      .nav-link,
+      .navbar-toggler-icon {
+        color: #182c24;
+      }
+
+      .nav-link:hover {
+        opacity: 0.5;
+        transform: scale(1.05);
+      }
+
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-down {
+        opacity: 0;
+        transform: translateY(-40px);
+        animation: fadeInDown 1s ease-out forwards;
+      }
+
+      @keyframes fadeInDown {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .gallery-title {
+        text-align: center;
+        margin-bottom: 50px;
+        animation-delay: 0.3s; 
+		word-spacing: 10px;
+      }
+
+      .gallery-title h1 {
+        font-family: 'Rock Salt', cursive;
+        font-weight: 400;
+      }
+
+      .photo-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 0 50px 100px;
+      }
+
+      .gallery-item {
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 1s ease-out forwards;
+        opacity: 0;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+
+      .floating-asset {
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .card {
+        background-color: #f8ffea;
+        color: #182c24;
+        border: none;
+        margin: 50px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        animation: fadeInDown 1s ease forwards;
+        animation-delay: 1.5s;
+        opacity: 0;
+      }
+
+      .card-header {
+        background-color: #425941;
+        color: #f5f5d1;
+        border-radius: 50px;
+      }
+
+      .btn-success {
+        background-color: #f5f5d1;
+        color: #0e1d16;
+        border: none;
+      }
+
+      .btn-success:hover {
+        background-color: #ffffcc;
+        color: #0e1d16;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="floating-assets-container"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top fade-in-down" style="animation-delay: 0s;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Yanuar FX</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Me</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">My Works</a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="portofolio.html">Photography</a></li>
+                <li><a class="dropdown-item" href="portovideo.html">Motion Graphic</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="gallery-title fade-in-down">
+      <h1>Photography Works</h1>
+      <p>my photography works so far.</p>
+    </div>
+
+    <div class="photo-gallery">
+      <div class="gallery-item" style="animation-delay: 0.4s;">
+        <img src="img/foto1.jpg" alt="Photo 1">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.5s;">
+        <img src="img/foto2.jpg" alt="Photo 2">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.6s;">
+        <img src="img/foto3.jpg" alt="Photo 3">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.7s;">
+        <img src="img/foto4.jpg" alt="Photo 4">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.8s;">
+        <img src="img/foto5.jpg" alt="Photo 5">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto6.jpg" alt="Photo 6">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto7.jpg" alt="Photo 7">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto8.jpg" alt="Photo 8">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto9.jpg" alt="Photo 9">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto10.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto11.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto12.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto13.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto14.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto15.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto16.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto17.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto18.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto19.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto20.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto21.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto22.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto23.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto24.jpg" alt="untitled">
+      </div>
+      <div class="gallery-item" style="animation-delay: 0.9s;">
+        <img src="img/foto25.jpg" alt="untitled">
+      </div>
+    </div>
+
+    <div class="card text-center">
+      <div class="card-header">Featured</div>
+      <div class="card-body">
+        <h5 class="card-title">More Portofolio</h5>
+        <p class="card-text">powered by foriio.</p>
+        <a href="https://fori.io/yanuarfx" class="btn btn-success">My Works</a>
+      </div>
+    </div>
+
+    <script>
+      const container = document.getElementById('floating-assets-container');
+
+      function randomAssets(count = 2) {
+        for (let i = 0; i < count; i++) {
+          const img = document.createElement('img');
+          img.src = 'img/aset3.png';
+          img.classList.add('floating-asset');
+
+          const size = Math.floor(Math.random() * 10) + 500;
+          img.style.width = `${size}px`;
+
+          const isLeft = Math.random() > 0.5;
+          img.style.left = isLeft ? `${Math.floor(Math.random() * 100)}px` : 'unset';
+          img.style.right = !isLeft ? `${Math.floor(Math.random() * 100)}px` : 'unset';
+
+          img.style.top = `${Math.floor(Math.random() * window.innerHeight)}px`;
+
+          container.appendChild(img);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        randomAssets(2);
+      });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

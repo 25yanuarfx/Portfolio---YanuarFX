@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/all.css" rel="stylesheet" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #f8ffea;
+        color: #1f342c;
+        padding-top: 100px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .navbar {
+        background-color: #1f342c;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar-brand {
+        font-family: "Rock Salt", cursive;
+      }
+
+      .navbar-brand,
+      .nav-link,
+      .navbar-toggler-icon {
+        color: #f8ffea;
+      }
+
+      .nav-link:hover {
+        opacity: 0.5;
+        transform: scale(1.05);
+      }
+
+      .nav-link.active {
+        color: #f8ffea !important;
+      }
+
+      .btn-success {
+        background-color: #f5f5d1;
+        color: #0e1d16;
+        border: none;
+      }
+
+      .btn-success:hover {
+        background-color: #ffffcc;
+        color: #0e1d16;
+      }
+
+      .card {
+        background-color: #182c24;
+        color: #f8ffea;
+        border: none;
+		margin: 30px;
+        border-radius: 10px;
+        animation: fadeInDown 1s ease forwards;
+        animation-delay: 1.5s;
+        opacity: 0;
+      }
+
+      .card-header {
+        background-color: #425941;
+        color: #f5f5d1;
+        border-radius: 50px;
+      }
+
+      .floating-asset {
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+      }
+		
+		.text-main{
+		text-align: center;
+        margin-bottom: 50px;
+        animation-delay: 0.3s; 
+		word-spacing: 10px;
+		}
+		
+		.text-main h1{
+  		font-family: "Rock Salt", cursive;
+		}
+
+      .fade-in-down {
+        opacity: 0;
+        transform: translateY(-40px);
+        animation: fadeInDown 1s ease-out forwards;
+      }
+
+      @keyframes fadeInDown {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      footer {
+        margin-top: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    </style>
+    <title>Porto Video Yanuar</title>
+  </head>
+  <body>
+    <div id="floating-assets-container"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top fade-in-down" style="animation-delay: 0s;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Yanuar FX</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Works</a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="portofolio.html">Photography</a></li>
+                <li><a class="dropdown-item" href="portovideo.html">Motion Graphic</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<div class="container fade-in-up" style="animation-delay: 0.5s;">
+  <div class="text-main">
+    <h1>Motion Graphic Projects</h1>
+    <p>my videography works so far.</p>
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <video controls class="card-img-top"><source src="img/vid1.mp4" type="video/mp4" /></video>
+        <div class="card-body">
+          <h5 class="card-title">Bumper Creator Talks</h5>
+          <p class="card-text">ini merupakan sebuah bumper video yang ditujukan untuk membuka sebuah acara di himapedia yaitu creator talks.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <video controls class="card-img-top"><source src="img/vid2.mp4" type="video/mp4" /></video>
+        <div class="card-body">
+          <h5 class="card-title">After Movie Lamaran Suci & Rafli</h5>
+          <p class="card-text">pada kesempatan kali ini saya berkesempatan untuk menggarap sebuah video engagement dari teh suci dan mas rafli.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <video controls class="card-img-top"><source src="img/vid3.m4v" type="video/mp4" /></video>
+        <div class="card-body">
+          <h5 class="card-title">Cinematic Vario 150</h5>
+          <p class="card-text">video cinematic motor vario client yang mana ini merupakan project perdana sekaligus editing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <video controls class="card-img-top"><source src="img/vid4.m4v" type="video/mp4" /></video>
+        <div class="card-body">
+          <h5 class="card-title">Sorai (Photo Music Video)</h5>
+          <p class="card-text">photo music video (pmv) untuk kenang-kenangan video perpisahan osis.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <video controls class="card-img-top"><source src="img/vid5.m4v" type="video/mp4" /></video>
+        <div class="card-body">
+          <h5 class="card-title">Motion Open Commission</h5>
+          <p class="card-text">sebagai bentuk branding diri untuk membuka jasa komisi editing video menggunakan motion grafis sebagai identitas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <video controls class="card-img-top"><source src="img/vid6.m4v" type="video/mp4" /></video>
+        <div class="card-body">
+          <h5 class="card-title">KGAV Free Footage 4</h5>
+          <p class="card-text">sebuah kontes yang diadakan oleh kandagavieno dan ralfaelpetrick, pada kontes kali ini saya menempati juara 2.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <video controls class="card-img-top"><source src="img/vid7.mp4" type="video/mp4" /></video>
+        <div class="card-body">
+          <h5 class="card-title">BARAKSA Trailder (Animasi 2D)</h5>
+          <p class="card-text">animasi ini merupakan sebuah tugas akhir mata kuliah animasi 2d sebagai bukti telah mengerjakan tugas akhir.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <video controls class="card-img-top"><source src="img/vid8.m4v" type="video/mp4" /></video>
+        <div class="card-body">
+          <h5 class="card-title">Experiment Edit 2k21</h5>
+          <p class="card-text">video ini adalah sebuah output dari hasil eksperimen editing di adobe after effect dengan metode eksplorasi vfx.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+	  
+    <footer class="mt-5">
+      <div class="card text-center">
+        <div class="card-header">Featured</div>
+        <div class="card-body">
+          <h5 class="card-title">More Portofolio</h5>
+          <p class="card-text">powered by foriio.</p>
+          <a href="https://fori.io/yanuarfx" class="btn btn-success">My Works</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const container = document.getElementById("floating-assets-container");
+      function randomAssets(count = 6) {
+        for (let i = 0; i < count; i++) {
+          const img = document.createElement("img");
+          img.src = "img/aset.png";
+          img.classList.add("floating-asset");
+          const size = Math.floor(Math.random() * 5) + 50;
+          img.style.width = `${size}px`;
+          const isLeft = Math.random() > 0.5;
+          img.style.left = isLeft ? `${Math.floor(Math.random() * 100)}px` : "unset";
+          img.style.right = !isLeft ? `${Math.floor(Math.random() * 100)}px` : "unset";
+          img.style.top = `${Math.floor(Math.random() * window.innerHeight)}px`;
+          container.appendChild(img);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        randomAssets(3);
+      });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
